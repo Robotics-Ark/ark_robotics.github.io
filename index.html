@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Ark: An Open-source Python-based Framework for Robot Learning">
+  <!-- <meta name="keywords" content="Diffusion, Semantic Rearrangement,
+   Transformer, Manipulation, Language Grounding"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ark: An Open-source Python-based Framework for Robot Learning</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!--<link rel="icon" href="./static/images/favicon.svg">-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Ark: An Open-source Python-based Framework for Robot Learning</h1>
+          <!-- <h3 class="title is-3 conference-authors">Robotics: Science and Systems (RSS) 2025</h3> -->
+          <div class="is-size-5 publication-authors" style="font-size: 17px  !important;">
+            <span class="author-block">
+              Helong Huang,
+              Christopher E. Mowe,r Guowei Huang, Sarthak Das, Magnus Dierking, Jun Wang, Haitham Bou-Ammar<sup>†</sup>, Xingyue Quan<sup>†</sup>
+            </span>
+
+          </div>
+
+          
+
+
+          <div class="is-size-5 publication-authors" style="display: flex; justify-content: center; gap: 40px; text-align: center;">
+            <!-- First Lab -->
+            <!-- <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="media/logo_simple.png" class="interpolation-image"
+                    alt="Huawei Noah's Ark Lab Logo" 
+                    style="width: 50px; height: auto;"/>
+                <span class="author-block">Huawei Noah's Ark Lab</span>
+            </div> -->
+        
+            <!-- Second Lab -->
+            <!-- <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="./media/UCL_logo.png" class="interpolation-image"
+                    alt="University College London Logo" 
+                    style="width: 170px; height: auto;"/>
+                <span class="author-block">University College London</span>
+            </div> -->
+        </div>
+
+          
+          
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./media/paper/noah_robot_iros25.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv(Coming soon)</span>
+                </a>
+              </span> -->
+
+              <!-- <span class="link-block">
+                <a href="https://openpyro-a1.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-tools"></i>
+                      <i class=""></i>
+                  </span>
+                  <span>Assembly Guide(coming soon)</span>
+                  </a>
+              </span> -->
+
+              <span class="link-block">
+                <a href="https://openpyro-a1.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code(coming soon)</span>
+                  </a>
+              </span>              
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+    <!-- Animation. -->
+    <div class="rows is-centered ">
+      <div class="row is-full-width">
+        <!-- <h2 class="title is-3"><span class="dnerf">SpatialCoT Overview</span></h2> -->
+        <!-- <h2 class="title is-3" style="text-align: center;"> Data Collection Pipeline for Chain-Of-Thought Spatial Grounding </h2>  -->
+
+        <!-- Interpolating. -->
+        <div class="content has-text-justified">
+        <!-- <br> -->
+        </div>
+        <!-- <img src="media/overview.png" class="interpolation-image"
+         alt="Architecture." style="width: 800px; height: auto; display: block; margin: auto;"/> -->
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Robotics has made remarkable hardware strides—from DARPA’s Urban and Robotics Challenges to the first humanoid-robot kickboxing tournament-yet commercial autonomy still lags behind progress in machine learning. A major bottleneck is software: current robot stacks demand steep learning curves, low-level C/C++ expertise, fragmented tooling, and intricate hardware integration, in stark contrast to the Python-centric, well-documented ecosystems that propelled modern AI. We introduce ARK, an open-source, Python-first robotics framework designed to close that gap. ARK presents a Gym-style environment interface that allows users to collect data, preprocess it, and train policies using state-of-the-art imitation-learning algorithms (e.g., ACT, Diffusion Policy) while seamlessly toggling between high-fidelity simulation and physical robots. A lightweight client–server architecture provides networked publisher-subscriber communication, and optional C/C++ bindings ensure real-time performance when needed. ARK ships with reusable modules for control, SLAM, motion planning, system identification, and visualization, along with native ROS interoperability. Comprehensive documentation and case studies—from manipulation to mobile navigation—demonstrate rapid prototyping, effortless hardware swapping, and end-to-end pipelines that rival the convenience of mainstream machine-learning workflows. By unifying robotics and AI practices under a common Python umbrella, ARK lowers entry barriers and accelerates research and commercial deployment of autonomous robots.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<!-- Image Section. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- <h2 class="title is-3">Image</h2> -->
+        <div class="content has-text-justified">
+          <center>
+            <img src="static/images/ArkFigure_page_15.jpg" alt="Ark Network" width="900" height="600">
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- <h2 class="title is-3">Image</h2> -->
+        <div class="content has-text-justified">
+          <center>
+            <img src="static/images/Sim_Real.jpg" alt="Ark Nework" width="900" height="1200">
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="section">
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Teleoperated Tasks</h2>
+      </div>
+      <br>
+  
+    <h3 class="title is-4">▪️ Two-handed Collaboration</h3>
+    <p>With our designed distributed robot control framework, IK control algorithm, we can smoothly control the robot to complete the dual-arm cooperative task.</p>
+    <br>
+    <div class="columns is-centered">
+
+        <div class="column">
+        <div class="content">
+            <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+            <source src="./media/videos/cut_apple_4x.webm"
+                    type="video/webm">
+            </video>
+            <p style="text-align: center;">Cut apple</p>
+        </div>
+        </div>
+
+        <div class="column">
+            <div class="content">
+                <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+                <source src="./media/videos/open_bag_and_pick_4x.webm"
+                        type="video/webm">
+                </video>
+                <p style="text-align: center;">Unpack and fetch</p>
+            </div>
+            </div>
+
+        <div class="column">
+        <div class="content">
+            <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+            <source src="./media/videos/fold_clothes_4x.webm"
+                    type="video/webm">
+            </video>
+            <p style="text-align: center;">Fold clothes</p>
+        </div>
+        </div>
+
+        
+    </div>
+
+    <div class="columns is-centered">
+
+        <div class="column">
+        <div class="content">
+            <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+            <source src="./media/videos/wash_dishes_4x.webm"
+                    type="video/webm">
+            </video>
+            <p style="text-align: center;">Wash dishes</p>
+        </div>
+        </div>
+
+        <div class="column">
+        <div class="content">
+            <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+            <source src="./media/videos/exchange_pick_and_place_4x.webm"
+                    type="video/webm">
+            </video>
+            <p style="text-align: center;">Pass the fruit</p>
+        </div>
+        </div>
+
+        <div class="column">
+        <div class="content">
+            <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+            <source src="./media/videos/open_bottle_4x.webm"
+                    type="video/webm">
+            </video>
+            <p style="text-align: center;">Open the bottle</p>
+        </div>
+        </div>
+    </div>
+
+  
+    <h3 class="title is-4">▪️ Long-Horizon Tasks</h3>
+    <p>Our robot can easily complete long-horizon tasks.</p>
+    <br>
+    <div class="columns is-centered">
+  
+        <div class="column">
+            <div class="content">
+            <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+                <source src="./media/videos/arrange_tableware_4x.webm"
+                        type="video/webm">
+            </video>
+            <p style="text-align: center;">Arrange tableware</p>
+            </div>
+        </div>
+  
+        <div class="column">
+          <div class="content">
+            <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+              <source src="./media/videos/clean_board_and_write_4x.webm"
+                      type="video/webm">
+            </video>
+            <p style="text-align: center;">Clean board and write</p>
+          </div>
+        </div>
+  
+      </div>
+  
+  
+      
+  
+      <h3 class="title is-4">▪️ Precise control</h3>
+      <p>With our high frequency motor control and calibration, our robot can easily complete precise tasks</p>
+      <br>
+      <div class="columns is-centered">
+        <div class="column">
+  
+        <div class="column is-narrow"> 
+          <div class="content">
+            <video id="dollyzoom" autoplay controls muted playsinline style="width: 200%; max-width: 1150px; height: auto;" >
+              <source src="./media/videos/write_noah_4x.webm" type="video/webm">
+            </video>
+            <p style="text-align: center;">Write with marker pen</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section> -->
+
+
+
+  <!-- <section class="section">
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Use Cases</h2>
+      </div>
+      <br>
+  
+    <h3 class="title is-4">▪️ Imitation Learning</h3>
+    <p> We integrated Action Chunking with Transformers (ACT) and Dynamic Movement Primitives (DMP).</p>
+    <br>
+    <div class="columns is-centered">
+
+        <div class="column">
+            <div class="content">
+                <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+                <source src="./media/videos/push_apple_4x.webm"
+                        type="video/webm">
+                </video>
+                <p style="text-align: center;">Push apple to the middle of table</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="content">
+                <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+                <source src="./media/videos/pick_apple_and_lemon_4x.webm"
+                        type="video/webm">
+                </video>
+                <p style="text-align: center;">Pick and place fruits with two hands</p>
+            </div>
+        </div>    
+
+        <div class="column">
+            <div class="content">
+                <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+                <source src="./media/videos/open_cupboard_4x.webm"
+                        type="video/webm">
+                </video>
+                <p style="text-align: center;">Open cupboard and reach to the target</p>
+            </div>
+        </div>    
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+            <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+            <source src="./media/videos/dual_arm_pick_place_simultaneously_4x.webm"
+                    type="video/webm">
+            </video>
+            <p style="text-align: center;">Try to grab with both hands several times</p>
+        </div>
+      </div>    
+
+
+      <div class="column">
+          <div class="content">
+              <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+              <source src="./media/videos/pick_exchange_banana_4x.webm"
+                      type="video/webm">
+              </video>
+              <p style="text-align: center;">Pass a banana</p>
+          </div>
+      </div>
+
+      
+  </div>
+
+    <h3 class="title is-4">▪️ Embodied AI</h3>
+    <p> We present an agent framework that uses a large language model (Deepseek) and a vision-language model (InternVL) to orchestrate a library of learned policies, enabling task execution from natural spoken language instructions. We demonstrate that the system can parse the scene, select relevant skills, and successfully complete a high-level task (e.g., filling a basket with fruit) while ignoring unnecessary actions. </p>
+    <br>
+    <img src="./media/noahr-emodied-ai-expr-agent_1.png" class="interpolation-image"
+      alt="Architecture." style="width: 800px; height: auto; display: block; margin: auto;"/>
+    <br>
+
+    <div class="columns is-centered">
+      <div class="column">
+
+      <div class="column is-narrow"> 
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted playsinline style="width: 200%; max-width: 1150px; height: auto;" >
+            <source src="./media/videos/dmp_4x.webm" type="video/webm">
+          </video>
+          <p style="text-align: center;">Choose fruits that are yellow in color</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="title is-4">▪️ More demonstrations</h3>
+    <br>
+    <div class="columns is-centered">
+  
+      <div class="column">
+          <div class="content">
+          <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+              <source src="./media/videos/pro_cloth_fold_4x_v2.webm"
+                      type="video/webm">
+          </video>
+          <p style="text-align: center;">Fold clothes</p>
+          </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+            <source src="./media/videos/pro_pour_water_4x.webm"
+                    type="video/webm">
+          </video>
+          <p style="text-align: center;">Pour water</p>
+        </div>
+      </div>
+    </div>
+
+  </section> -->
+
+
+
+  <!-- <section class="section">
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Hardware Design</h2>
+      </div>
+      <br>
+  
+    <h3 class="title is-4">▪️ Low-cost, Ease of repair and Scalability</h3>
+    <p>We consider the following three key principles when designing OpenPyRo-A1: Low-cost, Ease of repair and Scalability</p>
+    <br>
+    <div class="columns is-centered">
+
+        <div class="column">
+            <div class="content">
+                <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+                <source src="./media/videos/assemble_logo_4x.webm"
+                        type="video/webm">
+                </video>
+                <p style="text-align: center;">Low cost printed body</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="content">
+                <video id="dollyzoom" autoplay controls muted playsinline height="100%">
+                <source src="./media/videos/repair_gripper_4x.webm"
+                        type="video/webm">
+                </video>
+                <p style="text-align: center;">Easy to repair and replace</p>
+            </div>
+        </div>    
+
+    </div> 
+  </section> -->
+
+
+  
+
+
+
+
+</section>
+<section class="section" id="Citation">
+  <div class="container is-max-widescreen content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code> @misc{...,
+      title        = {...},
+      author       = {...},
+      year         = {2025},
+      howpublished = {\url{https://openpyro-a1.github.io/}},
+      note         = {Technical report}
+    }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <div class="content has-text-centered">
+          <p>
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> made by <a href="https://keunhong.com/">Keunhong Park</a>.
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
