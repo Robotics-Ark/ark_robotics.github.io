@@ -1,6 +1,6 @@
 # Ark
 
-This is the repository that contains source code for the [Ark website](https://ark_robotics.github.io).
+This is the repository that contains source code for the [Ark website](https://robotics-ark.github.io/ark_robotics.github.io/).
 
 If you find Ark useful for your work please cite:
 ```
