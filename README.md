@@ -1,15 +1,17 @@
 # Ark
 
-This is the repository that contains source code for the [Ark website](https://ark_robotics.github.io).
+This is the repository that contains source code for the [Ark website](https://robotics-ark.github.io/ark_robotics.github.io/).
 
 If you find Ark useful for your work please cite:
 ```
-@article{todo
-  author    = {},
-  title     = {},
-  journal   = {},
-  year      = {},
-}
+ @misc{robotark2025,
+      title        = {Ark: An Open-source Python-based Framework for Robot Learning},
+      author       = {Magnus Dierking, Christopher E. Mower, Sarthak Das, Huang Helong, Jiacheng Qiu, Cody Reading, 
+                      Wei Chen, Huidong Liang, Huang Guowei, Jan Peters, Quan Xingyue, Jun Wang, Haitham Bou-Ammar},
+      year         = {2025},
+      howpublished = {\url{https://ark_robotics.github.io/}},
+      note         = {Technical report}
+    }
 ```
 
 # Website License
