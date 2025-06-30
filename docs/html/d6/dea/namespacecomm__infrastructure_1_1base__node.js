@@ -1,0 +1,5 @@
+var namespacecomm__infrastructure_1_1base__node =
+[
+    [ "BaseNode", "d6/d8a/classcomm__infrastructure_1_1base__node_1_1_base_node.html", "d6/d8a/classcomm__infrastructure_1_1base__node_1_1_base_node" ],
+    [ "main", "d6/dea/namespacecomm__infrastructure_1_1base__node.html#af92d5085dcd2ede22267f935cbd43a1f", null ]
+];
