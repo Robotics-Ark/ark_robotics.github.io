@@ -1,0 +1,722 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Setting Up An Environment </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="224e053d-9c6f-800d-b286-e64ad1b77999" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1587990754909-18ae9d92c8e8?ixlib=rb-4.1.0&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🏞️</span></div><h1 class="page-title">Setting Up An Environment </h1><p class="page-description"></p></header><div class="page-body"><p id="224e053d-9c6f-80f8-82b2-e1fe2999c503" class="">In this tutorial, we will learn how to set up a Gym-compatible environment interface to control the Franka Emika Panda robot. This can be changed for multiple robots/different robots/more objects and sensors as well. </p><h3 id="224e053d-9c6f-80be-acd3-e7f3c4b929e3" class="">Prerequisites</h3><ul id="224e053d-9c6f-8059-b41a-e1c06abedbd0" class="bulleted-list"><li style="list-style-type:disc">A <strong>Franka Emika Panda</strong> robot is present and correctly configured in the environment.</li></ul><ul id="224e053d-9c6f-80dd-82ef-dad04f7a92e5" class="bulleted-list"><li style="list-style-type:disc">An additional object (e.g., a ball) that is actively <strong>publishing its ground-truth state</strong> to an observation channel.</li></ul><p id="224e053d-9c6f-8007-b870-d68984c1b9d8" class="">In this example we assume you are running a simulation that has the same set up seen below: </p><figure id="224e053d-9c6f-80ba-9225-f20f71dddf85" class="image"><a href="Setting%20Up%20An%20Environment%20224e053d9c6f800db286e64ad1b77999/image.png"><img style="width:640px" src="Setting%20Up%20An%20Environment%20224e053d9c6f800db286e64ad1b77999/image.png"/></a></figure><hr id="224e053d-9c6f-80de-b06e-e30c354e6e19"/><h2 id="224e053d-9c6f-8042-a71c-c0e1ef62ccd0" class="">Setting up the Environment</h2><p id="224e053d-9c6f-80b5-93f0-cf6590a3dfb4" class="">Add a file called <code>franka_env.py</code> in the scripts folder. </p><p id="224e053d-9c6f-80a4-881d-d9031c787c4e" class="">This file defines a custom environment <code>FrankaEnv</code> that integrates with the Ark=robotics framework. It is designed to control and observe a Franka Emika Panda robot interacting with a ball object, either in simulation or the real world.</p><hr id="224e053d-9c6f-8043-a368-c9f5f5482372"/><h2 id="224e053d-9c6f-8075-8ab1-e631aaadbb41" class="">📦 File Structure</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-8045-9715-ec4679f98caa" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">from ark.env.ark_env import ArkEnv
+from arktypes import joint_group_command_t, joint_state_t, rigid_body_state_t
+from arktypes.utils import pack, unpac</code></pre><ul id="224e053d-9c6f-804f-8401-c31169c2b02e" class="bulleted-list"><li style="list-style-type:disc"><strong>ArkEnv</strong>: Base class providing simulation and communication utilities.</li></ul><ul id="224e053d-9c6f-8032-b28a-fb26a29d2629" class="bulleted-list"><li style="list-style-type:disc"><strong>arktypes</strong>: Message types used in action and observation channels.</li></ul><ul id="224e053d-9c6f-8096-8401-c98bf0c7e565" class="bulleted-list"><li style="list-style-type:disc"><strong>pack/unpack</strong>: Helpers for serializing/deserializing messages to/from LCM.</li></ul><hr id="224e053d-9c6f-8025-ab24-f6c0c2079766"/><h2 id="224e053d-9c6f-8082-be01-faea7e3bee46" class="">🧠 Class Overview: <code>FrankaEnv</code></h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-805c-b1e8-fd6b898b2f56" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">class FrankaEnv(ArkEnv):</code></pre><p id="224e053d-9c6f-803f-800e-d581e29e2aad" class="">This class wraps around <code>ArkEnv</code> and defines an environment tailored for the Franka robot. It is compliant with standard RL environment conventions.</p><hr id="224e053d-9c6f-80e0-a37f-cd2009c20eba"/><h3 id="224e053d-9c6f-8042-a3c5-ded6c2a40aa2" class="">Key Elements:</h3><p id="224e053d-9c6f-8020-954f-d5e1a5a17be3" class="">In this case we will define our action and observation channels as below</p><ul id="224e053d-9c6f-80d2-99ee-ed576388e8ca" class="bulleted-list"><li style="list-style-type:disc"><strong>Action Channel</strong>:<p id="224e053d-9c6f-80e6-ab15-f9d0d110f2cc" class=""><code>Franka/joint_group_command/sim</code> → <code>joint_group_command_t</code></p><p id="224e053d-9c6f-80a8-a032-c77402237154" class="">Sends desired joint positions.</p></li></ul><ul id="224e053d-9c6f-8095-b2eb-e97c71691d8f" class="bulleted-list"><li style="list-style-type:disc"><strong>Observation Channels</strong>:<ul id="224e053d-9c6f-8073-9820-fcdc6aa1f9c1" class="bulleted-list"><li style="list-style-type:circle"><code>Franka/joint_states/sim</code> → <code>joint_state_t</code><p id="224e053d-9c6f-8036-a6c4-d77c8b0a2580" class="">Receives joint angles from Franka.</p></li></ul><ul id="224e053d-9c6f-80cb-a0fa-d7e2ed5d1037" class="bulleted-list"><li style="list-style-type:circle"><code>ball/ground_truth/sim</code> → <code>rigid_body_state_t</code><p id="224e053d-9c6f-80eb-ae1c-ea12e469a034" class="">Receives position and orientation of the ball.</p></li></ul></li></ul><h2 id="224e053d-9c6f-8080-a178-c9ace6720323" class="">🔧 Constructor</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-8061-bc0f-d26fe71d4707" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">
+def __init__(self, config=None, sim=True)</code></pre><ul id="224e053d-9c6f-8091-b894-d2d5e955494d" class="bulleted-list"><li style="list-style-type:disc">Initializes the environment.</li></ul><ul id="224e053d-9c6f-8059-b6b7-f2df3cc8ff23" class="bulleted-list"><li style="list-style-type:disc"><code>config</code>: path or dict to the system configuration YAML.</li></ul><ul id="224e053d-9c6f-80be-9c66-c3e5115e971e" class="bulleted-list"><li style="list-style-type:disc"><code>sim</code>: whether to run in simulation or real-world mode.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-80a8-bd44-fea03320215e" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">
+    environment_name = &quot;Franka_Enviroment&quot;
+
+</code></pre><ul id="224e053d-9c6f-803f-99d7-fbc280f41273" class="bulleted-list"><li style="list-style-type:disc">Sets the internal name of the environment (used for naming the Envrioment and Gym node).</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-8093-948d-d4fb66c9378d" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">    action_space = {
+        &#x27;Franka/joint_group_command/sim&#x27;: joint_group_command_t,
+    }</code></pre><ul id="224e053d-9c6f-800a-9b41-d5a6e914c6df" class="bulleted-list"><li style="list-style-type:disc">Defines the action channel and its Ark message type.</li></ul><ul id="224e053d-9c6f-80cd-846d-e71e6da456a9" class="bulleted-list"><li style="list-style-type:disc">Sends joint commands to Franka.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-80eb-8ae5-d67344567419" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">
+    observation_space = {
+        &#x27;Franka/joint_states/sim&#x27;: joint_state_t,
+        &#x27;ball/ground_truth/sim&#x27;: rigid_body_state_t,
+    }</code></pre><ul id="224e053d-9c6f-80fa-ad6b-ef61f2beeb52" class="bulleted-list"><li style="list-style-type:disc">Defines two observation channels:<ul id="224e053d-9c6f-8068-b60b-f1a2de79f7af" class="bulleted-list"><li style="list-style-type:circle"><code>Franka/joint_states/sim</code>: receives robot joint angles.</li></ul><ul id="224e053d-9c6f-80e3-bd8b-cb988859a9c9" class="bulleted-list"><li style="list-style-type:circle"><code>ball/ground_truth/sim</code>: receives the pose of a ball in the scene.</li></ul></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-80e8-80cd-f1e7a27f96b6" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">    super().__init__(
+        environment_name=environment_name,
+        action_channels=action_space,
+        observation_channels=observation_space,
+        global_config=config,
+        sim=sim
+    )</code></pre><ul id="224e053d-9c6f-80a2-a329-c71d9e192349" class="bulleted-list"><li style="list-style-type:disc">Calls the parent <code>ArkEnv</code> constructor, which:<ul id="224e053d-9c6f-809d-8e19-ec3c5cbb6e7d" class="bulleted-list"><li style="list-style-type:circle">Loads the config,</li></ul><ul id="224e053d-9c6f-80c5-9088-c361cbfea792" class="bulleted-list"><li style="list-style-type:circle">Sets up communication,</li></ul><ul id="224e053d-9c6f-80e9-af25-c883c1084fee" class="bulleted-list"><li style="list-style-type:circle">Creates action and observation spaces</li></ul></li></ul><hr id="224e053d-9c6f-80d2-a281-ebaeffa8e245"/><h2 id="224e053d-9c6f-8020-9ef6-c9d82cc5bb67" class="">🎮 Action Packing</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-80ba-bece-fcdb2e4237d9" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">python
+CopyEdit
+def action_packing(self, action):
+
+</code></pre><ul id="224e053d-9c6f-80b3-a979-f9beccdfb963" class="bulleted-list"><li style="list-style-type:disc">Converts a high-level action (list of joint angles) into a packed message to be sent over Ark Channels.</li></ul><ul id="224e053d-9c6f-8020-9a64-c8fb6fd5de4b" class="bulleted-list"><li style="list-style-type:disc">The input to these functions is what ever you pass into the step function when you call it from the gym.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-807e-a366-c3af203c87c2" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">
+    return {
+        &#x27;Franka/joint_group_command/sim&#x27;: pack.joint_group_command(
+            name=&quot;all&quot;,
+            cmd=action,
+        )
+    }</code></pre><ul id="224e053d-9c6f-8058-9bea-e1c0a9092f2a" class="bulleted-list"><li style="list-style-type:disc">Uses <code>joint_group_command</code> helper to create a packed message.</li></ul><ul id="224e053d-9c6f-80c0-b761-edf96d2feb6a" class="bulleted-list"><li style="list-style-type:disc">This function should return a dictionary where the keys should match the action channel name, and the value is the message.</li></ul><hr id="224e053d-9c6f-8062-a0c5-caf86982f566"/><h2 id="224e053d-9c6f-80e4-b0f6-c0ed0d8dffd8" class="">👁️ Observation Unpacking</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-8072-aa64-d77aa439f159" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">def observation_unpacking(self, observation):
+
+</code></pre><ul id="224e053d-9c6f-807e-a7a6-c3a720a2659a" class="bulleted-list"><li style="list-style-type:disc">This function will return a dictionary with the keys being the observation channels and the values being the latest observations on these channels. </li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-809f-8f75-e8ff49df70b1" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">    ball_position = unpack.unpack_rigid_body_state(
+        observation[&#x27;ball/ground_truth/sim&#x27;]
+    )</code></pre><ul id="224e053d-9c6f-80e7-8883-ce17a7fed26e" class="bulleted-list"><li style="list-style-type:disc">Decodes the position and orientation of the ball.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-8086-9ddb-e9f55aab2fa3" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">	
+    joint_states = unpack.unpack_joint_state(
+        observation[&#x27;Franka/joint_states/sim&#x27;]
+    </code></pre><ul id="224e053d-9c6f-80bf-bb0b-f38caf5434e3" class="bulleted-list"><li style="list-style-type:disc">Decodes the joint angles from the robot.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-8028-a0d1-f6ff3cddcccb" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">
+    return [ball_position, joint_states]</code></pre><ul id="224e053d-9c6f-80aa-9bda-ede2de6ddd2d" class="bulleted-list"><li style="list-style-type:disc">In this case we return a list of the two decoded observations as a list</li></ul><ul id="224e053d-9c6f-807e-a715-c53fe2d9954f" class="bulleted-list"><li style="list-style-type:disc">You can later process this into a vector or dictionary depending on use case.</li></ul><hr id="224e053d-9c6f-804f-aa01-eb03d25001a1"/><h2 id="224e053d-9c6f-8013-816b-eca25ac09045" class="">🏁 Termination &amp; Truncation Logic</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-8046-b13e-dbaa0cf0e3a6" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">def terminated_truncated_info(self, state, action, next_state):</code></pre><p id="224e053d-9c6f-80d1-8faf-e4a449a72db4" class="">Currently we will leave this blank but is a placeholder logic to decide whether the episode should terminate or truncate, for more advanced RL/IL examples Currently returns:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-8083-b645-f845b4df9adc" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">(False, False, None)</code></pre><p id="224e053d-9c6f-80c8-9da9-cefb4bb2f5c0" class="">Can be extended based on task goals (e.g., if ball is reached or time limit exceeded).</p><hr id="224e053d-9c6f-8052-94c3-d82c0758cee3"/><h2 id="224e053d-9c6f-8094-8688-e47e1482a8f5" class="">🎯 Reward Function</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-8062-8ce8-f568b4de3bff" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">def reward(self, state, action, next_state):</code></pre><p id="224e053d-9c6f-8079-b02b-f84b0a5f1c65" class="">This can also be customised to reflect task-specific rewards (e.g., distance between gripper and ball).</p><hr id="224e053d-9c6f-80b7-acaf-f1894f8a8add"/><h2 id="224e053d-9c6f-8010-ac3f-cd3f154542fb" class="">🔄 Environment Reset</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-80bb-bd6f-cea409d680b9" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">def reset_objects(self):</code></pre><p id="224e053d-9c6f-80bd-bfe2-cb08da9056b9" class="">Called during <code>env.reset()</code>. Responsible for putting all objects back into their initial state.</p><p id="224e053d-9c6f-8053-a798-e5269ef39f39" class="">You can call reset component function to reset the objects in the simulation. </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-80d0-8189-f63b2c8a78de" class="code"><code class="language-Python">  self.reset_component(&quot;Franka&quot;)</code></pre><p id="224e053d-9c6f-8054-8bbd-e598d461e70a" class="">Resets the Franka robot using configuration or user-defined values.</p><p id="224e053d-9c6f-8064-9183-e33b2184ed7f" class="">Optional keyword arguments if resetting a robot is: </p><ul id="224e053d-9c6f-80c2-8625-d5580cca2dfd" class="bulleted-list"><li style="list-style-type:disc">Base Position</li></ul><ul id="224e053d-9c6f-8069-b6da-c0648fb89625" class="bulleted-list"><li style="list-style-type:disc">Base Orientation</li></ul><ul id="224e053d-9c6f-8039-9892-c43445f6c4ee" class="bulleted-list"><li style="list-style-type:disc">Initial Configuration</li></ul><p id="224e053d-9c6f-809f-bb56-c7faba334754" class="">If left blank it will default to the values given in the config file. </p><p id="224e053d-9c6f-80a5-a90c-f9a4a2557c72" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="224e053d-9c6f-8067-9725-d5b2132ccd05" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">self.reset_component(&quot;ball&quot;, base_position=[-0.5, 1, 0.5])</code></pre><p id="224e053d-9c6f-80fa-9003-d430f7b9c86a" class="">Likewise we can reset the ball to any position of our choosing. </p><p id="224e053d-9c6f-806f-aa30-eb76f4192f7b" class="">Optional keyword arguments if resetting an object is: </p><ul id="224e053d-9c6f-80cd-96df-e87d12c275d5" class="bulleted-list"><li style="list-style-type:disc">Base Position</li></ul><ul id="224e053d-9c6f-80c6-aab1-c3e797e70eda" class="bulleted-list"><li style="list-style-type:disc">Base Orientation</li></ul><p id="224e053d-9c6f-80e1-a043-eadb8e4e7174" class="">If left blank it will default to the values given in the config file. </p><hr id="224e053d-9c6f-80f0-81c8-e42e0ac6dc4d"/><h2 id="224e053d-9c6f-808d-b724-ed006f02a12d" class="">✅ Summary Table</h2><table id="224e053d-9c6f-80e1-a959-c54e78d2e347" class="simple-table"><tbody><tr id="224e053d-9c6f-8034-baea-e3602012970f"><td id="SC\k" class=""><strong>Function</strong></td><td id="=[Y`" class=""><strong>What it Does</strong></td></tr><tr id="224e053d-9c6f-80fb-9cdb-e72f023d4624"><td id="SC\k" class=""><code>__init__</code></td><td id="=[Y`" class="">Sets up the FrankaEnv with channels and configuration</td></tr><tr id="224e053d-9c6f-809b-99c2-cdbc8fa60246"><td id="SC\k" class=""><code>action_packing</code></td><td id="=[Y`" class="">Packs joint commands into LCM messages</td></tr><tr id="224e053d-9c6f-80ee-8d43-f64ff9048ad0"><td id="SC\k" class=""><code>observation_unpacking</code></td><td id="=[Y`" class="">Decodes robot and object state from LCM messages</td></tr><tr id="224e053d-9c6f-8053-90c6-f9a9a9722a4e"><td id="SC\k" class=""><code>terminated_truncated_info</code></td><td id="=[Y`" class="">Defines episode end conditions (currently returns False)</td></tr><tr id="224e053d-9c6f-80ee-9635-dbae7256d18e"><td id="SC\k" class=""><code>reward</code></td><td id="=[Y`" class="">Computes scalar reward (currently always 0.0)</td></tr><tr id="224e053d-9c6f-8089-99b4-d3fe1fa178a6"><td id="SC\k" class=""><code>reset_objects</code></td><td id="=[Y`" class="">Sends reset services to robot and ball</td></tr></tbody></table><hr id="224e053d-9c6f-806e-aa7a-c2eee30e63b3"/><h3 id="224e053d-9c6f-80d4-a6b2-df5cefd2c297" class="">Code can be found: </h3><figure id="224e053d-9c6f-80e7-91cb-ce90d8fdbc88"><div class="source">https://github.com/Robotics-Ark/franka_gym_example</div></figure><hr id="224e053d-9c6f-80fd-a73c-f88daa301c74"/><h2 id="224e053d-9c6f-8063-af14-e461c1d168b3" class="">Next Steps</h2><figure id="224e053d-9c6f-80ee-8adb-fa70f60a4f9b" class="link-to-page"><a href="Setting%20Up%20A%20Gym%20224e053d9c6f80ee8adbfa70f60a4f9b.html"><span class="icon">🏋️</span>Setting Up A Gym</a></figure><p id="224e053d-9c6f-80e6-9f99-f0d0f3f29379" class="">
+</p><p id="224e053d-9c6f-803c-893a-e1caa4c8bbd5" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
