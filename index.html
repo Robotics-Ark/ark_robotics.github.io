@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="An Open-source Python-based Framework for Embodied AI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ark: An Open-source Python-based Framework for Embodied AI</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Ark: An Open-source Python-based Framework for Robot Learning</h1>
+          <div class="is-size-5 publication-authors" style="font-size: 17px  !important;">
+            <span class="author-block">
+            </span>
+
+          </div>
+
+          <div class="is-size-5 publication-authors" style="display: flex; justify-content: center; gap: 40px; text-align: center;">    
+          </div>
+
+          <div style="margin-top: 2rem;"></div>
+          
+
+          <div class="columns is-centered is-vcentered">
+            <!-- Paper -->
+            <div class="column is-narrow has-text-centered">
+              <!-- TODO: will update paper later -->
+              <a href="static/docs/ark.pdf"
+                class="external-link button is-normal is-rounded is-dark"
+                target="_blank" rel="noopener noreferrer">
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </div>
+
+            <!-- Tutorials -->
+            <div class="column is-narrow has-text-centered">
+              <!-- TODO: will re-write tutorials later -->
+              <a href=""
+                class="external-link button is-normal is-rounded is-dark"
+                target="_blank" rel="noopener noreferrer">
+                <span class="icon">
+                  <i class="fa fa-university"></i>
+                </span>
+                <span>Tutorials</span>
+              </a>
+            </div>
+
+            <!-- Docs -->
+            <div class="column is-narrow has-text-centered">
+                <!-- TODO: will re-write docs later -->
+                <a href=""
+                class="external-link button is-normal is-rounded is-dark"
+                target="_blank" rel="noopener noreferrer">
+                <span class="icon">
+                  <i class="fa fa-book"></i>
+                </span>
+                <span>Docs</span>
+              </a>
+            </div>
+
+
+
+            <!-- Code -->
+            <div class="column is-narrow has-text-centered">
+              <a href="https://github.com/Robotics-Ark"
+                class="external-link button is-normal is-rounded is-dark"
+                target="_blank" rel="noopener noreferrer">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+    <div class="rows is-centered ">
+      <div class="row is-full-width">
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Notice</h2>
+        <div class="content has-text-justified">
+          <p>
+            Like any large software project, at some point they need refactoring. 
+            As such, Ark is currently under an active revamp.
+            The codebase is still available as it was released before, however some parts may change signficantly in the near future.
+            We appreciate your patience and understanding as we work to improve the framework.
+            We are aiming for a first release of Ark v1.5 in April 2026.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Robotics has made remarkable hardware strides—from DARPA’s Urban and Robotics Challenges to the first humanoid-robot kickboxing tournament-yet commercial autonomy still lags behind progress in machine learning. A major bottleneck is software: current robot stacks demand steep learning curves, low-level C/C++ expertise, fragmented tooling, and intricate hardware integration, in stark contrast to the Python-centric, well-documented ecosystems that propelled modern AI. We introduce Ark, an open-source, Python-first robotics framework designed to close that gap. Ark presents a Gym-style environment interface that allows users to collect data, preprocess it, and train policies using state-of-the-art imitation-learning algorithms (e.g., ACT, Diffusion Policy) while seamlessly toggling between high-fidelity simulation and physical robots. A lightweight client–server architecture provides networked publisher-subscriber communication, and optional C/C++ bindings ensure real-time performance when needed. Ark ships with reusable modules for control, SLAM, motion planning, system identification, and visualization, along with native ROS interoperability. Comprehensive documentation and case studies—from manipulation to mobile navigation—demonstrate rapid prototyping, effortless hardware swapping, and end-to-end pipelines that rival the convenience of mainstream machine-learning workflows. By unifying robotics and AI practices under a common Python umbrella, Ark lowers entry barriers and accelerates research and commercial deployment of autonomous robots.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
